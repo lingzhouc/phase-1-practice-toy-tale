@@ -13,3 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+const toyName = document.getElementsByName('name')
+toyName.addEventListener ('submit', (e) => {
+  e.preventDefault()
+  
+})
