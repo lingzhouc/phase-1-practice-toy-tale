@@ -22,24 +22,25 @@ document.addEventListener("DOMContentLoaded", () => {
 // }
 // fetchToys();
 
-const toyForm = document.querySelector('form')
+const toyForm = document.querySelector('form');
 
 toyForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  newToy(e.target.name.value, e.target.image.value)
+  newToy(e.target.name.value, e.target.image.value);
+  e.reset();
 })
 
 function newToy (toyName, toyImg) {
   const div = document.createElement('div');
-  const toyheader = document.createElement('h2');
-  toyheader.innerText = toyName;
+  const toyHeading = document.createElement('h2');
+  toyHeading.innerText = toyName;
 
   const img = document.createElement('img');
   img.className = "toy-avatar";
   img.src = toyImg;
 
   const p = document.createElement('p');
-  p.innerText = ` 7 Likes`;
+  p.innerText = `7 Likes`;
 
 
   const btn = document.createElement('button');
@@ -49,5 +50,5 @@ function newToy (toyName, toyImg) {
 
   const toyBox = document.querySelector('#toy-collection');
   toyBox.append(div);
-  div.appendChild(img, p, btn);
+  div.append(toyHeading, img, p, btn);
 };
